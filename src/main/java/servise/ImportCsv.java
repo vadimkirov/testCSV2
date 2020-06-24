@@ -15,7 +15,8 @@ import static utils.Least.*;
 import static utils.UI.*;
 
 /**
- * Преобразователь между Operation-сущностями и соответствующими транспортными объектами.
+ *
+ * Пример  оформления
  */
 public class ImportCsv {
 
