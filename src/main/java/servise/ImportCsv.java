@@ -84,9 +84,9 @@ public class ImportCsv {
         service.shutdown();                                                   //стоит убрать
         // Ждем завершения выполнения потоков не более waitTime минут.
         try {                                                                 //стоит убрать
-            service.awaitTermination(waitTime, TimeUnit.MINUTES); //Максимальное время обработки,стоит убрать
+           service.awaitTermination(waitTime, TimeUnit.MINUTES); //Максимальное время обработки,стоит убрать
         } catch (InterruptedException e) {                                      //стоит убрать
-            e.printStackTrace();                                                 //стоит убрать
+           e.printStackTrace();                                                 //стоит убрать
         }                                                                         //стоит убрать
 
         List<Product> beans = resultList(mapResult, maxSizeMap);

@@ -12,6 +12,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.Queue;
 import java.util.concurrent.PriorityBlockingQueue;
 import java.util.stream.Collectors;
 
@@ -72,13 +73,16 @@ public class UI {
     //Считывание файла в очередь обработки
     //так как работа с диском- "дорогое удовольствие",
     // загрузка одного файла идет в одном потоке
-    public static PriorityBlockingQueue<Product> makerToMap(Path path, Character delimiter, int maxSizeMap) throws FileNotFoundException {
+    public static Queue<Product> makerToMap(Path path,
+                                            Character delimiter,
+                                            int maxSizeMap,
+                                            int maxRep) throws FileNotFoundException {
 
         return  leastN(
                 new CsvToBeanBuilder(new FileReader(path.toFile())).withSeparator(delimiter)
                         .withType(Product.class).build().parse(),
-
-                maxSizeMap);
+                maxSizeMap,
+                maxRep);
     }
 
 
