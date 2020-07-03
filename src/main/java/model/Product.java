@@ -5,7 +5,7 @@ import com.opencsv.bean.CsvBindByPosition;
 import java.util.Objects;
 
 /**
- * Модель сущности
+ * Модель сущности.
  */
 public class Product implements Comparable<Product> {
 
